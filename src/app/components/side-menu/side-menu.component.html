@@ -1,0 +1,49 @@
+<!-- <p>
+  side-menu works!
+</p> -->
+<ion-menu menuId="main-menu" contentId="main">
+  <ion-content>
+  <!-- <h1>Menu</h1> -->
+  <div class="menu-header-bg"></div>
+  <div class="header-content">
+    <img src="../assets/signindoc.jpg" alt="">
+    <ion-label>
+      <h2> Dr. Manku </h2>
+       <p>
+         Eye Specialist
+       </p>
+     
+    </ion-label>
+  </div>
+  <div class="action-button">
+    <ion-button>
+      Add Branch
+      <ion-icon slot="start" name="add">
+
+      </ion-icon>
+    </ion-button>
+  </div>
+  <ion-list class="menu-items" lines="none">
+  <ion-item  [routerLinkActive]="'active'" routerLink="/home">
+  <ion-icon name="browsers-outline" ></ion-icon>
+  Home
+ </ion-item>
+ <ion-item [routerLinkActive]="'active'" routerLink="/create-appointment">
+  <ion-icon name="flash" ></ion-icon>
+  Create Appointment
+ </ion-item>
+ <ion-item [routerLinkActive]="'active'" routerLink="/contact-us">
+  <ion-icon name="chatbubble-ellipses-outline" ></ion-icon>
+  Contact Us
+ </ion-item>
+ <ion-item [routerLinkActive]="'active'" routerLink="/about-us">
+  <ion-icon name="heart-outline" ></ion-icon>
+  About Us
+ </ion-item>
+ <ion-item (click)="signOut()">
+  <ion-icon name="exit-outline" ></ion-icon>
+  Sign out
+ </ion-item>
+  </ion-list>
+  </ion-content>
+</ion-menu>

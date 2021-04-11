@@ -1,0 +1,7 @@
+{
+  "name": "clinic-app",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

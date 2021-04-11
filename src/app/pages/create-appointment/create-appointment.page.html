@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Create Appointment</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+  <svg class="back-blob" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <path fill="#8295A3" d="M68.6,-33.5C81.6,-17.2,79.6,13.8,65.7,37.6C51.8,61.3,25.9,77.8,2.1,76.6C-21.7,75.4,-43.5,56.5,-54.2,34.6C-65,12.7,-64.8,-12.3,-53.9,-27.4C-43,-42.4,-21.5,-47.6,3.2,-49.4C27.9,-51.2,55.7,-49.7,68.6,-33.5Z" transform="translate(100 100)" />
+  </svg>
+  <div class="ion-padding">
+  
+    <form class="ion-padding" [formGroup]="appointmentform" (ngSubmit)="onSubmit()">
+  
+      <div class="wrap-input">
+      <input class="input" type="text"  placeholder="Full Name" formControlName="name">
+      </div>
+  
+      <div class="wrap-input">
+      <input class="input" type="tel" placeholder="contact no" maxlength="10" formControlName="cno">
+      </div>
+  
+      <div class="wrap-input">
+        <input class="input" type="text" placeholder="Problem" formControlName="prblm">
+        </div>
+
+        <div class="wrap-input">
+          <ion-textarea placeholder="Description" style="border-radius: 50%;background-color: rgba(255, 255, 255, .8);" formControlName="des"></ion-textarea>
+        </div> 
+
+        <div class="wrap-input">
+          <!-- <ion-label>Notifications</ion-label> -->
+          <ion-select value="notifications" interface="action-sheet" placeholder="type of appointment" formControlName="toa">
+            <ion-select-option value="online">Online</ion-select-option>
+            <ion-select-option value="offline">Offline</ion-select-option>
+            <!-- <ion-select-option value="mute_week">Mute for a week</ion-select-option>
+            <ion-select-option value="mute_year">Mute for a year</ion-select-option> -->
+          </ion-select>
+        </div>
+
+        <!-- <div class="wrap-input">
+          <input class="input" type="text"  placeholder="type of appointment">
+          </div>  -->
+    
+          <div class="wrap-input">
+            <!-- <ion-label position="floating">Date</ion-label> -->
+            <ion-datetime displayFormat="MM/DD/YYYY" min="1960-03-14" max="2021-12-31" placeholder="Date:eg-1960-03-14" formControlName="date"></ion-datetime>
+          </div> 
+
+          <div class="wrap-input">
+            <ion-datetime displayFormat="h:mm a" placeholder="Time:eg-8:10pm" formControlName="time"></ion-datetime>
+            </div> 
+
+      
+
+      <div class="container-form-btn">
+        <button class="form-btn custom-font">
+        Submit
+        </button>
+      </div>   
+  
+  
+    </form>
+  
+  </div>
+  </ion-content>
+<!-- </ion-content> -->

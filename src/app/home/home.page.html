@@ -1,0 +1,107 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Home
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-menu-button></ion-menu-button>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div *ngIf="!appointments">
+ 
+    <ion-list>
+      <ion-list-header>
+        <ion-label>
+          <ion-skeleton-text animated style="width: 20%"></ion-skeleton-text>
+        </ion-label>
+      </ion-list-header>
+      <ion-item>
+        <ion-avatar slot="start">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-avatar>
+        <ion-label>
+          <h3>
+            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          </p>
+          <p>
+            <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-thumbnail>
+        <ion-label>
+          <h3>
+            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          </p>
+          <p>
+            <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-skeleton-text animated style="width: 27px; height: 27px" slot="start"></ion-skeleton-text>
+        <ion-label>
+          <h3>
+            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          </p>
+          <p>
+            <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div *ngIf="appointments">
+
+
+<div *ngFor="let app of appointments">
+  <ion-card  >
+    <ion-card-header>
+    
+      <ion-card-title>{{app.prblm}} <ion-button fill="outline" style="float: right;" color="primary" class="actionbtn" routerLink="/appointment-details" [queryParams]="{'appointment-id':app.id}">More</ion-button></ion-card-title>
+      
+      <ion-card-subtitle>{{app.date | date:'dd-MMM-yyyy'}}</ion-card-subtitle>
+      <ion-card-subtitle>{{app.time | date:"HH:mm"}}</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+  <div>
+    <span style="font-weight: bold;">Status: </span> 
+    <span >{{app.status|| 'Unapproved'}}</span> 
+  </div>
+  <div>
+    <span style="font-weight: bold;">Appointment type: </span> 
+    <span >{{app.toa}}</span> 
+  </div>
+  <ion-button fill="outline" slot="start" color="success" class="actionbtn" routerLink="/edit-appointment" [queryParams]="{'appointment-id':app.id}">Edit</ion-button>
+  <ion-button fill="outline" slot="end" color="danger"  class="actionbtn" (click)="deleteAppointment(app)">delete</ion-button>
+ 
+    </ion-card-content>
+  </ion-card>
+</div>
+
+ 
+</div>
+</ion-content>

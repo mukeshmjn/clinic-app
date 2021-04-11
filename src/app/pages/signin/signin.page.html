@@ -1,0 +1,69 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>SIGNIN</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+</ion-content> -->
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="primary">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <!-- <ion-buttons slot="end">
+      <ion-button routerLink="/signup">Sign up</ion-button>
+    </ion-buttons> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="header">
+
+    <h1 class="ion-text-center">SIGNIN</h1>
+    <div class="ion-text-center" style="    font-weight: 900;
+    font-family: fangsong;
+    font-size: 28px;    margin-top: -48px;">
+      Welcome To Our Clinic
+    </div>
+
+    <img src="assets/signindoc.jpg" />
+  </div>
+<!-- <div class="ion-text-center">
+  Welcome To Our Clinic
+</div> -->
+  <form id="form" [formGroup]="signinForm" (ngSubmit)="onSubmit()" novalidate>
+    <div style="background-color: #f5f5f3 !important;">
+      <div style="font-family: cursive;
+      font-weight: 600;">
+        Please Sign in using your Mobile Number 
+      </div>
+      <ion-item style="border-radius: 50px;    border: 2px solid blue;background-color: #f5f5f3 !important;">
+        <ion-label position="stacked">Enter Your number</ion-label>
+        <ion-input type="tel" maxlength="10" formControlName="num"></ion-input>
+       
+      </ion-item>
+      <div *ngIf="otpinp">
+        <div style="font-family: cursive;
+        font-weight: 600;    margin-bottom: 2px;
+      margin-top: 14px;
+  " >
+          Enter OTP
+        </div>
+        <ion-item >
+          <!-- <ion-label>Enter OTP</ion-label> -->
+          <ion-input type="tel" maxlength="6" formControlName="otp"></ion-input>
+        </ion-item>
+      </div>
+     
+      <!-- <app-input style="    width: 30%;" type ="number"  placeholder="Country Code"   ></app-input>
+      <app-input style="width: 100%;" placeholder="Phone number" ></app-input> -->
+    </div>
+    <ion-button expand="block" shape="round" color="warning" (click)="sendOtp()">SEND OTP</ion-button>
+    <ion-button expand="block" type="submit" shape="round">CONTINUE</ion-button>
+  </form>
+</ion-content>
+<div id="sign-in-button"></div>
